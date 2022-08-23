@@ -1,7 +1,6 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
-import { startGetTemperatures } from '../actions/temperatureAction'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 
@@ -10,12 +9,6 @@ const TemperatureChart = () => {
     const temperature = useSelector((state) => {
         return state.temperature.data
     })
-
-    const dispatch = useDispatch()
-
-    const handleGetTemperature = () => {
-        dispatch(startGetTemperatures())
-    }
 
     const data = temperature.map((ele) => {
         return ele.temperature.map((e) => {
@@ -46,8 +39,6 @@ const TemperatureChart = () => {
     return (
         <div>
             <h1> TemperatureChart </h1>
-
-            <button onClick={handleGetTemperature}> GET TEMPERATURES </button>
 
             <HighchartsReact
                 highcharts={Highcharts}

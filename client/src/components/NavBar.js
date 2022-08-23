@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
+// import Alert from 'react-bootstrap/Alert'
+
 
 import { isLoggedIn, isLoggedOut } from '../actions/userActions'
 
@@ -21,11 +24,13 @@ const Navbar = (props) => {
         localStorage.clear('token')
         dispatch(isLoggedOut())
         props.history.push('/')
+        alert("Logged Out")
+        
     }
 
     return (
         <div>
-            {(loggedIn) && (<button onClick={handleLogOut}>Logout</button>)}
+            {(loggedIn) && (<Button variant='secondary' onClick={handleLogOut}>Logout</Button>)}
         </div>
     )
 }
