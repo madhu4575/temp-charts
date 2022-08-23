@@ -1,0 +1,20 @@
+.color-overlay { 
+    position: absolute;
+    background-color: rgba(0,0,0,0.2);
+    height: 80%;
+    width: 100%
+}
+
+form {
+    background-color: white;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+}
+
+.login{
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+    border:3px dotted black;
+    background-color: rgb(100, 198, 231);
+}
+

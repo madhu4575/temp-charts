@@ -5,6 +5,8 @@ import * as Yup from 'yup'
 import { startLogin } from '../actions/userActions'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
+import './custom.css'
+
 
 const LoginForm = (props) => {
 
@@ -30,7 +32,8 @@ const LoginForm = (props) => {
     })
 
     return (
-            <Form onSubmit={formik.handleSubmit}>
+        <div className='color-overlay d-flex justify-content-center align-items-center'  >
+            <Form onSubmit={formik.handleSubmit} className='rounded p-4 p-sm-5'>
                 <Form.Group className='mb-3' controlId='formBasicEmail'>
                     <Form.Label>Email</Form.Label><br />
                     <Form.Control 
@@ -47,7 +50,7 @@ const LoginForm = (props) => {
                     </Form.Text>
                 </Form.Group>
 
-                <Form.Group>
+                <Form.Group className='mb-3' controlId='formBasicPassword'>
                     <Form.Label>Password</Form.Label><br />
                     <Form.Control 
                         type="password"
@@ -67,6 +70,7 @@ const LoginForm = (props) => {
                 <Button variant="primary" type="submit" value='LOGIN'>Login</Button>
                 
         </Form>
+        </div>
     )
 }
 
