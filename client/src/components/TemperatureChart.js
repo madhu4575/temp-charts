@@ -31,7 +31,7 @@ const TemperatureChart = () => {
         },
         xAxis: {
             title: {
-                text: 'Time'
+                text: 'Time in Hours'
             }
         }
     }
